@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*1rem = 10px formula*/
+    font-size: 62.5%; /*1rem = 10px*/
+}
+
+.font-pers {
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: blue;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 100px;
+}
+
+header nav {
+}
+
+a {
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: black;
+    color:white;
+}
+
+/*Clase 4*/
+.card {
+    background-color: orange;
+    /*Margenes*/
+    padding: 3rem;
+    width: 325px;
+    height: 400px;
+    border-top: solid 5px red;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.orden1 {
+    order:0;
+}
+
+.orden2 {
+    order:1;
+}
+.orden3 {
+    order:2;
+}
+
+.orden4 {
+    order:3;
+}
+
+.card-img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.ejemplo-overflow {
+    width: 100px;
+    height: 110px;
+    border: solid 1 px red;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+}
+
+.oferta {
+    position: absolute;
+    top: 10px;
+    left: 80%;
+    width: auto;
+    background-color: red;
+}
+
+#productos {
+    position: sticky;
+    top: 10px;
+    margin-top: 300px;
+}
+
+/*Flexbox se basa en un contenedor padre*/
+.menu-productos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.menu-productos li{
+    background-color: black;
+    border-radius: 0.8rem;
+    padding: 5px 10px;
+}
+
+.padre-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    height: 2000px;
+    margin-top: 30px;
+    gap: 60px;
+    justify-content: center;
+}
+
+.card h4, .card p, .card button{
+    margin-top: 15px;
+}
+
+.card button {
+    
+}
+
+.padre-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.padre-galeria img {
+    width: 500px;
+    height: 300px;
+}
+/*Medidas*/
+
+/*rem unidad relativa (no se adapta) = 16 px*/
+px {
+    font-size: 16px;
+}
+
+/*rem unidad absoluta (se adapta) = 16 px*/
+rem {
+    font-size: 1rem;
+}
+
+/*.grid-container {
+    display: grid;
+    grid-template-columns: 300px 100px;
+    grid-template-rows: 40px 100px;
+    border: solid 1px white;
+}*/
+
+/*.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    border: solid 1px white;
+
+}*/
+
+/*.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 2fr);
+    border: solid 1px white;
+}
+
+.grid-container div{
+    border: solid 3px white;
+}*/
+
+/*#grilla {
+    display: grid;
+    grid-template-areas: 
+        "nav header header"
+        "nav productos publicidad"
+        "nav servicios publicidad"
+        "nav footer footer";
+    grid-template-columns: 100px 1fr 1fr 75px;
+    grid-template-rows:  20% auto 15%;
+    gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+ }
+ footer {
+    grid-area: footer;
+ }
+ section#productos {
+    grid-area: productos;     
+ }
+ section#servicios {
+    grid-area: servicios;     
+ }*/
+
+ .grid-container {
+    justify-items: start; /* start | end | center | stretch */
+    align-items: center; /* start | end | center | stretch */
+    justify-content: start;
+    display: grid;
+    width: 95%;
+    height: 500px;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    grid-template-rows: 100px 100px;
+    grid-row-gap: 10px;
+  }
+
+ nav {
+    grid-area: nav;
+ }
+ aside {
+    grid-area: publicidad;
+ }
+
+ /*PROPIEDADES DE LOS HIJOS GRID*/
+.grid-container {
+    display: grid;
+    /*Justify items mueve LOS HIJOS horizontal (izquierda o derecha) DENTRO DE SU PROPIO ESPACIO*/
+    justify-items: start; /* start | end | center | stretch */
+
+    /*Align items mueve LOS HIJOS vertical DENTRO DE SU PROPIO ESPACIO(arriba o abajo)*/
+    align-items: start; /* start | end | center | stretch */
+
+    /*Justify content: mueve TODOS LOS HIJOS (el contenido dentro de él) horizontalmente*/
+    justify-content: start;
+
+    /*Align content: mueve TODOS LOS HIJOS (el contenido dentro de él) verticalmente*/
+    align-content: end;
+
+    width: 95%;
+    height: 500px;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    grid-template-rows: 100px 100px;
+    row-gap: 10px;
+}
+
+.grid-container .grid-item {
+    border: solid 3px red;
+    font-size: 21px;
+    padding: 5px;
+    background-color: yellow;
+}
+
+ .border {
+    border: solid 3px;
+ }
+
+ .fotos {
+    display: grid;
+    grid-template-areas: 
+    "foto1 foto1 foto2 foto2 foto2"
+    "foto3 foto3 foto2 foto2 foto2"
+    "foto3 foto3 foto2 foto2 foto2"
+    "foto4 foto5 foto6 foto7 foto8";
+    gap: 5px;
+ }
+
+ .uno, .dos, .tres, .cuatro, .cinco, .seis, .siete, .ocho{
+    max-width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+ .uno {
+    background-image: url(../img/R1.jpg);
+    grid-area: foto1;
+    align-self: flex-start;
+ }
+
+ .dos {
+    background-image: url(../img/R2.jpg);
+    grid-area: foto2;
+    align-self: self-start;
+    height: 100%;
+ }
+
+ .tres {
+    background-image: url(../img/R3.jpg);
+    grid-area: foto3;
+ }
+
+ .cuatro {
+    background-image: url(../img/R4.jpg);
+    grid-area: foto4;
+ }
+
+ .cinco {
+    background-image: url(../img/R1.jpg);
+    grid-area: foto5;
+ }
+
+ .seis {
+    background-image: url(../img/R2.jpg);
+    grid-area: foto6;
+ }
+
+ .siete {
+    background-image: url(../img/R3.jpg);
+    grid-area: foto7;
+ }
+
+ .ocho {
+    background-image: url(../img/R4.jpg);
+    grid-area: foto8;
+ }
+
+ /*media requires*/
+ .mi-estilo {
+    background-color: green;
+    color: black;
+ }
+
+ @media (max-width: 480px){
+    .mi-estilo {
+        background-color: yellow;
+        color: blue;
+    }
+}
+
+header {
+    grid-area: header;
+ }
+ footer {
+    grid-area: footer;
+ }
+ section#productos {
+    grid-area: productos;     
+ }
+ section#servicios {
+    grid-area: servicios;     
+ }
+ nav {
+    grid-area: nav;
+ }
+ aside {
+    grid-area: publicidad;
+ }
+
+ #grilla {
+        display: grid;
+        grid-template-areas:
+          "nav header header"
+          "nav productos publicidad"
+          "nav servicios publicidad"
+          "nav footer footer";
+        grid-template-rows: 80px 1fr 1fr 60px; 
+        grid-template-columns: 20% auto 15%;
+     }
+     .border {
+        border: 1px solid black;
+        background-color: lightgreen;
+     }
+
+     @media screen and (min-width: 768px) {
+        #grilla {
+        grid-template-rows:100px 1fr 1fr 1fr 60px;
+        grid-template-columns:repeat(4, 1fr);
+        grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "productos productos productos publicidad"
+        "servicios servicios servicios publicidad"
+        "footer footer footer footer";
+              }
+              .border {
+        background-color: lightblue;
+             }
+        }
